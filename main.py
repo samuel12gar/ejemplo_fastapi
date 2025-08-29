@@ -13,7 +13,7 @@ class Item(BaseModel):
 def get_db():
     db = sqlite3.connect("items.db")
     cursor = db.cursor()
-    cursor.execute("CREATE TABLE IF NO EXISTS items (id INTEGER PRIMARY KEY, text TEXT)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, text TEXT)")
     db.commit()
     return db
 
